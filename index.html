@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clase Gratuita de Resina</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Inter, Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
+    ),
+    url("https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1600");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.card{
+    width:100%;
+    max-width:520px;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(6px);
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+}
+
+.badge{
+    display:inline-block;
+
+    background:#f3f4f6;
+
+    color:#444;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:2rem;
+    line-height:1.3;
+    color:#111827;
+    margin-bottom:18px;
+}
+
+.description{
+    color:#4b5563;
+    line-height:1.7;
+    margin-bottom:28px;
+}
+
+.cta{
+    font-size:1.05rem;
+    font-weight:600;
+    color:#111827;
+    margin-bottom:18px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+input{
+    width:100%;
+    padding:16px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    font-size:1rem;
+}
+
+input:focus{
+    outline:none;
+    border-color:#111827;
+}
+
+button{
+    border:none;
+
+    background:#111827;
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+button:hover{
+    transform:translateY(-1px);
+}
+
+.notice{
+    margin-top:14px;
+
+    font-size:.8rem;
+
+    color:#6b7280;
+
+    text-align:center;
+}
+
+@media (max-width:600px){
+
+    .card{
+        padding:28px 22px;
+    }
+
+    h1{
+        font-size:1.6rem;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+    <div class="card">
+    <div class="badge">
+        Clase demostrativa en vivo sin costo
+    </div>
+
+    <h1>
+        Aprende cómo crear accesorios de resina con acabado profesional,
+        incluso si estás comenzando desde cero.
+    </h1>
+
+    <p class="description">
+        Participa en <strong>dos clases demostrativas en vivo totalmente gratuitas</strong>,
+        donde conocerás paso a paso los materiales, herramientas y técnicas básicas utilizadas
+        para crear piezas únicas de resina.
+        
+       
+    </p>
+
+    <div class="cta">
+        Reserva tu lugar sin costo
+    </div>
+
+    <form action="#" method="POST">
+
+        <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre completo"
+            required
+        >
+
+        <input
+            type="tel"
+            name="telefono"
+            placeholder="Número de WhatsApp"
+            required
+        >
+
+        <button type="submit">
+            Quiero reservar mi lugar
+        </button>
+
+    </form>
+
+    <div class="notice">
+        Completa tus datos y te agregaremos al grupo de WhatsApp donde enviaremos toda la información de acceso a las clases.
+    </div>
+
+    </div>
+
+</body>
+</html>
