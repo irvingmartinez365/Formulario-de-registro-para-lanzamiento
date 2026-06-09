@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
 <title>Clase Gratuita de Resina</title>
 
 <style>
@@ -211,11 +212,17 @@ button:hover{
     </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
     <script>
 
 const URL_SCRIPT =
 "https://script.google.com/macros/s/AKfycbxaU4AOtpCdYQ9u6IrjXBUiC7Q6kUfAtUKYuQLNr88hYsBvBLlZ4lVZudNQAupRrTY/exec";
-
+const input = document.getElementById("whatsapp");
+        const whatsapp = window.intlTelInput(input, {
+  initialCountry: "auto",
+  separateDialCode: true,
+});
+        
 document
 .getElementById("registroForm")
 .addEventListener("submit", async function(e){
@@ -224,7 +231,7 @@ document
 
     const datos = {
         nombre: document.getElementById("nombre").value,
-        whatsapp: document.getElementById("whatsapp").value
+        whatsapp: whatsapp.getNumber();
     };
 
     try {
