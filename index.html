@@ -182,18 +182,18 @@ button:hover{
         Reserva tu lugar sin costo
     </div>
 
-    <form action="#" method="POST">
+    <form id="registroForm">
 
         <input
             type="text"
-            name="nombre"
+            id="nombre"
             placeholder="Nombre completo"
             required
         >
 
         <input
             type="tel"
-            name="telefono"
+            id="whatsapp"
             placeholder="Número de WhatsApp"
             required
         >
@@ -201,14 +201,53 @@ button:hover{
         <button type="submit">
             Quiero reservar mi lugar
         </button>
-
+        
     </form>
-
+    <p id="mensaje"></p>
     <div class="notice">
         Completa tus datos y te agregaremos al grupo de WhatsApp donde enviaremos toda la información de acceso a las clases.
     </div>
 
     </div>
 
+
+    <script>
+
+const URL_SCRIPT =
+"https://script.google.com/macros/s/TU_URL_AQUI/exec";
+
+document
+.getElementById("registroForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const datos = {
+        nombre: document.getElementById("nombre").value,
+        whatsapp: document.getElementById("whatsapp").value
+    };
+
+    try {
+
+        await fetch(URL_SCRIPT, {
+            method: "POST",
+            body: JSON.stringify(datos)
+        });
+
+        document.getElementById("mensaje").innerHTML =
+        "✅ Registro recibido. Te agregaremos al grupo de WhatsApp pronto ☺️.";
+
+        this.reset();
+
+    } catch(error){
+
+        document.getElementById("mensaje").innerHTML =
+        "❌ Ocurrió un error. Intenta nuevamente.";
+
+    }
+
+});
+
+</script>
 </body>
 </html>
