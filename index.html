@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
 <title>Clase Gratuita de Resina</title>
 
 <style>
@@ -191,7 +189,12 @@ button:hover{
             placeholder="Nombre completo"
             required
         >
-
+        <input 
+            type="text"
+            id="pais"
+            placeholder="Pais de residencia"
+            required      
+        >
         <input
             type="tel"
             id="whatsapp"
@@ -212,26 +215,20 @@ button:hover{
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
     <script>
 
-const URL_SCRIPT =
-"https://script.google.com/macros/s/AKfycbxaU4AOtpCdYQ9u6IrjXBUiC7Q6kUfAtUKYuQLNr88hYsBvBLlZ4lVZudNQAupRrTY/exec";
-const input = document.getElementById("whatsapp");
-        const whatsapp = window.intlTelInput(input, {
-  initialCountry: "auto",
-  separateDialCode: true,
-});
+const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbyAFADOwcXw9gBwtEY28H4Oi79tEl9RhhHXY9XgJupDfzzCkmS_VVNpC7xEL6HoH7hT/exec";
+
         
 document
 .getElementById("registroForm")
 .addEventListener("submit", async function(e){
 
     e.preventDefault();
-
     const datos = {
         nombre: document.getElementById("nombre").value,
-        whatsapp: whatsapp.getNumber()
+        whatsapp: document.getElementById("whatsapp").value,
+        pais: document.getElementById("pais").value
     };
 
     try {
@@ -242,7 +239,7 @@ document
         });
 
         document.getElementById("mensaje").innerHTML =
-        "✅ Registro recibido. Te agregaremos al grupo de WhatsApp pronto ☺️.";
+        "✅ Registro recibido. Te agregaremos al grupo de WhatsApp pronto ☺️ (ya puedes cerrar esta pagina).";
 
         this.reset();
 
